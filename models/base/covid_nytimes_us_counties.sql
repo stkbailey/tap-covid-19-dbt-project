@@ -1,5 +1,5 @@
 with source as (
-    select * from {{source("COVID_ALLIANCE", "NYTIMES_US_COUNTIES") }}
+    select * from {{source("COVID_ALLIANCE", "nytimes_us_counties") }}
 ),
 renamed as (
     select

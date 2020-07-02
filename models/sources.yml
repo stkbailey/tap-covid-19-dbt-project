@@ -2,26 +2,28 @@ version: 2
 
 sources:
 - name: COVID_ALLIANCE
+  database: JIRA4U
+  schema: COVID_ALLIANCE
   tables:
-  - name: C19_TRK_US_DAILY
+  - name: c19_trk_us_daily
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_POPULATION_COUNTIES
+  - name: c19_trk_us_population_counties
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_POPULATION_STATES
+  - name: c19_trk_us_population_states
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_POPULATION_STATES_AGE_GROUPS
+  - name: c19_trk_us_population_states_age_groups
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_STATES_ACS_HEALTH_INSURANCE
+  - name: c19_trk_us_states_acs_health_insurance
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_STATES_CURRENT
+  - name: c19_trk_us_states_current
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_STATES_DAILY
+  - name: c19_trk_us_states_daily
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_STATES_INFO
+  - name: c19_trk_us_states_info
     tags: ["COVID Tracking Project"]
-  - name: C19_TRK_US_STATES_KFF_HOSPITAL_BEDS
+  - name: c19_trk_us_states_kff_hospital_beds
     tags: ["COVID Tracking Project"]
-  - name: NYTIMES_US_COUNTIES
+  - name: nytimes_us_counties
     tags: ["New York Times"]
-  - name: NYTIMES_US_STATES
+  - name: nytimes_us_states
     tags: ["New York Times"]
