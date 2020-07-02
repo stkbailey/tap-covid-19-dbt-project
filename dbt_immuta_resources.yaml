@@ -1,0 +1,112 @@
+
+projects:
+    covid_base_tables:
+      name: COVID Base Tables
+      documentation: |
+        These data sources contain basic information about the tables.
+      dbt_regex: "source.tap_covid_19_dbt.COVID_ALLIANCE"
+      
+    covid_project_1:
+      name: COVID Alliance - Project 1
+      documentation: |
+        These data sources contain basic information about the tables.
+      dbt_regex: "model.tap_covid_19_dbt.project_1.*"
+      dbt_tags: ["project_1"]
+      tags: ["Project 1"]
+
+    covid_project_2:
+      name: COVID Alliance - Project 2
+      documentation: |
+        These data sources contain basic information about the tables.
+      dbt_regex: "model.tap_covid_19_dbt.project_1.*"
+      tags: ["Project 2"]
+
+groups:
+    covid_alliance_internal:
+        name: COVID Alliance Internal
+        iamid: bim
+        email: covid-alliance-int@gmail.com
+        description: |
+          This group is for people internal to the COVID Alliance team.
+    covid_alliance_external:
+        name: COVID Alliance External
+        iamid: bim
+        email: covid-alliance-ext@gmail.com
+        description: |
+          This group is for people external to the COVID Alliance team.
+
+
+tags:
+    internal_access_only:
+        name: Internal Access Only
+        source: dbt_immuta
+
+purposes:
+    covid_aims:
+        name: Limited to COVID Alliance Aims
+        acknowledgement: |
+          I will use this data solely for the purpose of COVID Alliance's aims.
+          I acknowledge that these data are derived from the hard work of our team,
+          and that they contain sensitive information.
+        displayAcknowledgement: true
+
+policies:
+    governors_approve_internal_access:
+        name: Governors Must Approve
+        type: subscription
+        actions:
+        - type: subscription
+          description: null
+          subscriptionType: approval
+          approvals:
+          - requiredPermission: GOVERNANCE
+            specificApproverRequired: false
+        circumstances:
+        - type: tags
+          operator: or
+          tag:
+            name: "Internal Access Only"  
+    mission_focused:
+        name: Mission Focused
+        type: data
+        actions:
+        - type: prerequisite
+          description: null
+          rules:
+          - type: prerequisite
+            config:
+              qualifications:
+                operator: and
+                conditions:
+                - type: purposes
+                  value: "Limited to COVID Alliance Aims"
+            exceptions: null
+        circumstances: null
+    mask_personal_data:
+        name: "Mask Personal Data"
+        type: data
+        actions:
+        - type: masking
+          description: null
+          rules:
+          - type: masking
+            config:
+              fields:
+              - name: Discovered.PII
+                source: curated
+                hasLeafNodes: false
+              maskingConfig:
+                type: Consistent Value
+                metadata:
+                  constant: null
+            exceptions:
+              operator: and
+              conditions:
+              - type: purposes
+                value: "Limited to COVID Alliance Aims"
+        circumstances:
+        - type: columnTags
+          operator: or
+          columnTag:
+            name: Discovered.PII
+            hasLeafNodes: false

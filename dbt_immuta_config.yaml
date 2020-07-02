@@ -1,0 +1,13 @@
+version: 1
+
+configuration:
+    state_directory: /Users/sbailey/Documents/GitHub/tap-covid-19-dbt-project/.imstate
+    dbt_project_path: /Users/sbailey/Documents/GitHub/tap-covid-19-dbt-project
+    dbt_profile_path: /Users/sbailey/.dbt/profiles.yml
+    immuta_server: https://covid-alliance.demo.immuta.com
+    immuta_api_key: d6407502ad1b7efe5fe326
+
+options:
+    initialize: True
+    validate_settings: True
+    resource_file: /Users/sbailey/Documents/GitHub/tap-covid-19-dbt-project/dbt_immuta_resources.yaml
