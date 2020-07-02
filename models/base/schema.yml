@@ -1,0 +1,14 @@
+version: 2
+
+models:
+- name: covid_nytimes_us_counties
+  tags: ["New York Times"]
+  description: New York Times table for Counties
+  columns:
+  - name: CASES
+    description: The number of cases in a county.
+    meta:
+      tags: "Key Metrics"
+  - name: COUNTIES
+  - name: RECORD_DATE
+  - name: RECORD_DATETIME

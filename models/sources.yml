@@ -1,16 +1,27 @@
 version: 2
 
 sources:
-- name: TAP_COVID_19
+- name: COVID_ALLIANCE
   tables:
   - name: C19_TRK_US_DAILY
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_POPULATION_COUNTIES
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_POPULATION_STATES
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_POPULATION_STATES_AGE_GROUPS
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_STATES_ACS_HEALTH_INSURANCE
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_STATES_CURRENT
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_STATES_DAILY
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_STATES_INFO
+    tags: ["COVID Tracking Project"]
   - name: C19_TRK_US_STATES_KFF_HOSPITAL_BEDS
+    tags: ["COVID Tracking Project"]
   - name: NYTIMES_US_COUNTIES
+    tags: ["New York Times"]
   - name: NYTIMES_US_STATES
+    tags: ["New York Times"]
