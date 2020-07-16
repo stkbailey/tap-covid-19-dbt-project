@@ -38,5 +38,7 @@ models:
         materialized: view
       project_1:
         tags: ["Project 1"]
-        materialized: table
-
+        materialized: view
+      project_2:
+        tags: ["Project 2"]
+        materialized: view

@@ -17,7 +17,7 @@ sources:
       - Replication strategy: Single file w/ daily updates (additional rows). Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse states_current content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
   - name: c19_trk_us_states_daily
     description: |
       [c19_trk_us_states_daily](https://github.com/COVID19Tracking/covid-tracking-data/blob/master/data/states_daily_4pm_et.csv)
@@ -29,7 +29,7 @@ sources:
       - Replication strategy: Single file w/ daily updates (updated rows). Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse states_daily content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
   - name: c19_trk_us_states_info
     description: |
       [c19_trk_us_states_info](https://github.com/COVID19Tracking/covid-tracking-data/blob/master/data/states_info.csv)
@@ -41,7 +41,8 @@ sources:
       - Replication strategy: Single file w/ occasional updates (updated rows). Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, ecode, parse states_info content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
+
   - name: c19_trk_us_population_states
     description: |
       [c19_trk_us_population_states](https://github.com/COVID19Tracking/associated-data/blob/master/us_census_data/us_census_2018_population_estimates_states.csv)
@@ -66,7 +67,7 @@ sources:
       - Replication strategy: Single file w/ minimal updates. Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse us_population_states_age_groups content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
   - name: c19_trk_us_population_counties
     description: |
       [c19_trk_us_population_counties](https://github.com/COVID19Tracking/associated-data/blob/master/us_census_data/us_census_2018_population_estimates_counties.csv)
@@ -78,7 +79,7 @@ sources:
       - Replication strategy: Single file w/ minimal updates. Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse us_population_counties content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
   - name: c19_trk_us_states_acs_health_insurance
     description: |
       [c19_trk_us_states_acs_health_insurance](https://github.com/COVID19Tracking/associated-data/blob/master/acs_health_insurance/acs_2018_health_insurance_coverage_estimates.csv)
@@ -90,7 +91,7 @@ sources:
       - Replication strategy: Single file w/ minimal updates. Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse us_acs_health_insurance content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+
   - name: c19_trk_us_states_kff_hospital_beds
     description: |
       [c19_trk_us_states_kff_hospital_beds_files (per 1000 population)](https://github.com/COVID19Tracking/associated-data/blob/master/kff_hospital_beds/kff_usa_hospital_beds_per_capita_2018.csv)
@@ -102,8 +103,8 @@ sources:
       - Primary key fields: __sdc_row_number
       - Replication strategy: Single file w/ minimal updates. Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
-      - Transformations: Remove content node, add     tags: ["COVID 19 Tap"]repository fields, decode, parse us_kff_hospital_beds content and convert to JSON, camelCase to snake_case field keys
-    tags: ["COVID 19 Tap"]
+      - Transformations: Remove content node, add repository fields, decode, parse us_kff_hospital_beds content and convert to JSON, camelCase to snake_case field keys
+
 
   - name: nytimes_us_states
     description: |
@@ -116,7 +117,7 @@ sources:
       - Replication strategy: Single file w/ daily updates (additional rows). Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse us-states content and convert to JSON, lookup state_name
-    tags: ["New York Times"]
+
   - name: nytimes_us_counties
     description: |
       [nytimes_us_counties](https://github.com/nytimes/covid-19-data/blob/master/us-counties.csv)
@@ -128,4 +129,3 @@ sources:
       - Replication strategy: Single file w/ daily updates (additional rows). Use FULL_TABLE replication w/ activate_version.
         - Bookmark field: git_last_modified
       - Transformations: Remove content node, add repository fields, decode, parse us-counties content and convert to JSON, lookup state_name
-    tags: ["New York Times"]
